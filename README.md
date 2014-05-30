@@ -1,1 +1,1 @@
-[SelectManyEnumerable](http://blog.cincura.net/)
+[SelectManyEnumerable](http://blog.cincura.net/233460-all-linq-methods-implemented-only-by-selectmany)
