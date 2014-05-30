@@ -15,5 +15,15 @@ namespace SelectManyEnumerable
 		{
 			return source.SelectMany((x, i) => new[] { selector(x, i) });
 		}
+
+		public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
+		{
+			return source.SelectMany(x => predicate(x) ? new[] { x } : new TSource[0]);
+		}
+
+		public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
+		{
+			return source.SelectMany((x, i) => predicate(x, i) ? new[] { x } : new TSource[0]);
+		}
 	}
 }
