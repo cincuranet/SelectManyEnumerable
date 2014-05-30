@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectManyEnumerable", "SelectManyEnumerable\SelectManyEnumerable.csproj", "{7C3A9906-CC43-4472-9EB4-08C7E57ACA82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectManyEnumerable.Tests", "SelectManyEnumerable.Tests\SelectManyEnumerable.Tests.csproj", "{3DA5C79D-194D-4582-8707-E23664502784}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7C3A9906-CC43-4472-9EB4-08C7E57ACA82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C3A9906-CC43-4472-9EB4-08C7E57ACA82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C3A9906-CC43-4472-9EB4-08C7E57ACA82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA5C79D-194D-4582-8707-E23664502784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA5C79D-194D-4582-8707-E23664502784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA5C79D-194D-4582-8707-E23664502784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA5C79D-194D-4582-8707-E23664502784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
