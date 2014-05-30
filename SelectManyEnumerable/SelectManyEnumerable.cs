@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SelectManyEnumerable
 {
-	static class SelectManyEnumerable
+	public static class SelectManyEnumerable
 	{
 		public static IEnumerable<TResult> Select<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
 		{
