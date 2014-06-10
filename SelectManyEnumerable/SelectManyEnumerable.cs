@@ -23,5 +23,10 @@ namespace SelectManyEnumerable
 		{
 			return source.SelectMany((x, i) => predicate(x, i) ? new[] { x } : new TSource[0]);
 		}
+
+		public static IEnumerable<TSource> Skip<TSource>(this IEnumerable<TSource> source, int count)
+		{
+			return source.SelectMany(x => --count < 0 ? new[] { x } : new TSource[0]);
+		}
 	}
 }
