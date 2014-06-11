@@ -21,12 +21,12 @@ namespace SelectManyEnumerable
 		}
 		public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
 		{
-			return source.SelectMany((x, i) => predicate(x, i) ? new[] { x } : new TSource[0]);
+			return source.SelectMany((x, i) => predicate(x, i) ? new[] { x } : new TSource[] { });
 		}
 
 		public static IEnumerable<TSource> Skip<TSource>(this IEnumerable<TSource> source, int count)
 		{
-			return source.SelectMany(x => --count < 0 ? new[] { x } : new TSource[0]);
+			return source.SelectMany(x => --count < 0 ? new[] { x } : new TSource[] { });
 		}
 	}
 }
