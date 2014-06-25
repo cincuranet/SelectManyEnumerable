@@ -26,7 +26,7 @@ namespace SelectManyEnumerable
 
 		public static IEnumerable<TSource> Skip<TSource>(this IEnumerable<TSource> source, int count)
 		{
-			return source.SelectMany(x => --count < 0 ? new[] { x } : new TSource[] { });
+			return source.SelectMany((x, i) => i >= count ? new[] { x } : new TSource[] { });
 		}
 	}
 }
