@@ -28,5 +28,10 @@ namespace SelectManyEnumerable
 		{
 			return source.SelectMany((x, i) => i >= count ? new[] { x } : new TSource[] { });
 		}
+
+		public static IEnumerable<TSource> Take<TSource>(this IEnumerable<TSource> source, int count)
+		{
+			return source.SelectMany((x, i) => i < count ? new[] { x } : new TSource[] { });
+		}
 	}
 }
