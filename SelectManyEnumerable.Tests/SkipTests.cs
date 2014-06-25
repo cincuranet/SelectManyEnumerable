@@ -11,7 +11,7 @@ namespace SelectManyEnumerable.Tests
 	public class SkipTests : TestsBase
 	{
 		[Test]
-		public void SelectTests_Basic()
+		public void SkipTests_Basic()
 		{
 			var data = GetData();
 			var expected = Enumerable.Skip(data, 6);
