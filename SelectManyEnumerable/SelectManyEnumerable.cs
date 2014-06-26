@@ -33,5 +33,14 @@ namespace SelectManyEnumerable
 		{
 			return source.SelectMany((x, i) => i < count ? new[] { x } : new TSource[] { });
 		}
+
+		public static IEnumerable<TSource> SkipWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
+		{
+			return source.SkipWhile((x, _) => predicate(x));
+		}
+		public static IEnumerable<TSource> SkipWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
+		{
+			return source.SelectMany((x, i) => !predicate(x, i) ? new[] { x } : new TSource[] { });
+		}
 	}
 }
