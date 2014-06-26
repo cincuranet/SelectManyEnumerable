@@ -42,5 +42,14 @@ namespace SelectManyEnumerable
 		{
 			return source.SelectMany((x, i) => !predicate(x, i) ? new[] { x } : new TSource[] { });
 		}
+
+		public static IEnumerable<TSource> TakeWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
+		{
+			return source.TakeWhile((x, _) => predicate(x));
+		}
+		public static IEnumerable<TSource> TakeWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
+		{
+			return source.SelectMany((x, i) => predicate(x, i) ? new[] { x } : new TSource[] { });
+		}
 	}
 }
