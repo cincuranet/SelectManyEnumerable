@@ -36,7 +36,7 @@ namespace SelectManyEnumerable
 
 		public static IEnumerable<TSource> SkipWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
-			return source.SkipWhile((x, _) => predicate(x));
+			return SkipWhile(source, (x, _) => predicate(x));
 		}
 		public static IEnumerable<TSource> SkipWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
 		{
@@ -45,7 +45,7 @@ namespace SelectManyEnumerable
 
 		public static IEnumerable<TSource> TakeWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
-			return source.TakeWhile((x, _) => predicate(x));
+			return TakeWhile(source, (x, _) => predicate(x));
 		}
 		public static IEnumerable<TSource> TakeWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
 		{
