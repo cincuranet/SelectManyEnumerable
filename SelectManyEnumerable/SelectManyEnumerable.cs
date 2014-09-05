@@ -51,5 +51,12 @@ namespace SelectManyEnumerable
 		{
 			return source.SelectMany((x, i) => predicate(x, i) ? new[] { x } : new TSource[] { });
 		}
+
+		public static IEnumerable<TResult> Zip<TFirst, TSecond, TResult>(this IEnumerable<TFirst> first, IEnumerable<TSecond> second, Func<TFirst, TSecond, TResult> resultSelector)
+		{
+			return first
+				.SelectMany((x, i) => new[] { Tuple.Create(x, i) }, (_, x) => Tuple.Create(x.Item1, Take(Skip(second, x.Item2), 1)))
+				.SelectMany(x => x.Item2, (a, b) => resultSelector(a.Item1, b));
+		}
 	}
 }
