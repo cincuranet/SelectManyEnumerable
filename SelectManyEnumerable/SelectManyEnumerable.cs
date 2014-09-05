@@ -54,9 +54,7 @@ namespace SelectManyEnumerable
 
 		public static IEnumerable<TResult> Zip<TFirst, TSecond, TResult>(this IEnumerable<TFirst> first, IEnumerable<TSecond> second, Func<TFirst, TSecond, TResult> resultSelector)
 		{
-			return first
-				.SelectMany((x, i) => new[] { Tuple.Create(x, i) }, (_, x) => Tuple.Create(x.Item1, Take(Skip(second, x.Item2), 1)))
-				.SelectMany(x => x.Item2, (a, b) => resultSelector(a.Item1, b));
+			return first.SelectMany((x, i) => new[] { Tuple.Create(x, i) }, (x, y) => Select(Take(Skip(second, y.Item2), 1), z => resultSelector(x, z))).SelectMany(x => x);
 		}
 	}
 }
