@@ -8,9 +8,9 @@ namespace SelectManyEnumerable.Tests
 {
 	public class TestsBase
 	{
-		protected static int[] GetData()
+		protected static int[] GetData(int count = 128)
 		{
-			return Enumerable.Range(1, 128).ToArray();
+			return Enumerable.Range(1, count).ToArray();
 		}
 	}
 }
